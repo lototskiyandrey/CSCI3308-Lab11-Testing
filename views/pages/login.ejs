@@ -1,0 +1,35 @@
+<%- include ('../partials/head.ejs') %>
+<%- include ('../partials/menu.ejs') %>
+
+<main>
+  <div class="container">
+    <% if(loggedOut === true){ %>
+        <div class="alert alert-primary" role="alert">
+            Logged Out Successfully!
+        </div>
+    <% } %>
+    <div class="col"><%- include ('../partials/message') %></div>
+    <div class="container py-2" style="background-color: white;">
+        <!-- THE REST OF YOUR HTML CODE GOES HERE -->
+        <h2>
+            Login
+        </h2>
+        <form class="d-flex flex-column mt-2" action="/login" method="POST">
+            <label for="username">
+                Username
+            </label>
+            <input class="form-control my-2 px-2" type="username" id="username" name="username" placeholder="Enter Username" required/>
+    
+            <label for="password">
+                Password 
+            </label>
+            <input class="form-control my-1 px-2" type="password" id="password" name="password" required/>
+            
+            <input class="btn col-sm-2 btn-success mt-3 ml-2 bg-primary text-white" type="submit" value="Login"/>       
+        </form>
+        <a href="http://localhost:3000/register" class="btn btn-outline-secondary mt-2" role="button">No Account? Register Here</a>
+      </div>
+  </div>
+</main>
+
+<%- include ('../partials/footer') %>

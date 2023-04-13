@@ -1,0 +1,46 @@
+<%- include ('../partials/head') %>
+<%- include ('../partials/menu') %>
+
+<main>
+  <div class="container">
+    <!-- THE REST OF YOUR HTML CODE GOES HERE -->
+    <main>
+        <div class="container">
+          <!-- THE REST OF YOUR HTML CODE GOES HERE -->
+          <table class="table">
+              <tr>
+                  <th>
+                      Name
+                  </th>
+                  <th>
+                      Image
+                  </th>
+                  <th>
+                      Date
+                  </th>
+                  <th>
+                      Time
+                  </th>
+                  <th>
+                       Book Now
+                </th>
+              </tr>
+              <% for(let i = 0; i < results.length; i++){ %>
+                <tr>
+                    <td><%= results[i].name%></td>
+                    <td><img src="<%- results[i].images[0].url%>" class="img-fluid" width="150px" height='150px' alt="Responsive image"></td>
+                    <td><%= results[i].dates.start.localDate%></td>
+                    <td><%= results[i].dates.start.localTime%></td>
+                    <form action="<%- results[i].url %>">
+                        <td><button type="submit" class="btn btn-success bg-light btn-outline-primary text-primary" name="purchse_tickets">Link</button></td>
+                    </form>
+                </tr>
+              <% } %>
+          </table> <br>
+        </div>
+      </main>
+      
+  </div>
+</main>
+
+<%- include ('../partials/footer') %>
